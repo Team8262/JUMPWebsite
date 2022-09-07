@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" style="height:100%">
+<head>
+  <title>People | JUMP Robotics</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" type="image/png" href="../assets/images/icon.svg?v=1"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/main.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="../js/loadtemplate.js"></script>
+  <script>
+    function mm(){
+      var photos = document.getElementsByClassName("s")
+      console.log(photos)
+      for(const pic of photos){
+        pic.src="../assets/images/people/jack"+randInt(3)+".jpg"
+      }
+      var cards = document.getElementsByClassName("flip-card-back")
+      for(const card of cards){
+        let children = card.children;
+        children[0].textContent = "Jack"
+        children[1].textContent = "Makes a mean battery mount"
+      }
+
+
+      }
+      function updateText(){
+        if(loaded===false){
+          window.setTimeout(updateText, 100);
+        }else{      
+          artem = document.getElementById("Artem_Tesov")
+          artem.textContent="Artëm Tësov"
+        }
+      }
+      updateText()
+
+  </script>
+  <style>
+    .flip-card {
+      background-color: transparent;
+      width: 200px;
+      height: 300px;
+      perspective: 1000px; /* Remove this if you don't want the 3D effect */
+      margin:10px;
+      margin-left:auto;
+      margin-right:auto;
+      font-size:1.3rem;
+      overflow-wrap: break-word; 
+    }
+
+    
+    /* This container is needed to position the front and back side */
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+    
+    /* Do an horizontal flip when you move the mouse over the flip box container */
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+    
+    /* Position the front and back side */
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden; /* Safari */
+      backface-visibility: hidden;
+      background-image:cover;
+    }
+    
+    /* Style the back side */
+    .flip-card-back {
+      background-color:white;
+      transform: rotateY(180deg);
+      filter:brightness(95%);
+      padding:12%;
+    }
+    .flip-card-back h1{
+      font-size: 2rem;
+    }
+
+
+
+    .flip-card-back, .s{
+      border-radius:10%;
+    }
+    .s{
+      height:100%;
+      width:200px;
+      object-fit:cover
+    }
+
+  </style>
+</head>
+<body>
+</body>
+    <div id="Don't run mm()"></div>
+    <div data-include="header"></div>
+    <div class="container" style="height:30%;">
+      <h1 style="position:relative;top:50%;text-align:center;">Meet the Team</h1>
+    </div>
+    <div data-include="teamcards" style="padding-bottom:5%;"></div>
+    <div data-include="footer"></div>
+</body>
+</html>

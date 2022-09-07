@@ -1,0 +1,39 @@
+h1, p{
+    background: -webkit-linear-gradient(10deg, rgb(32, 145, 221), rgb(91, 17, 228));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter:brightness(100%);
+    font-family: Montserrat, sans-serif!important;
+    
+  }
+  .full{
+    width:100%;
+    height:100%;
+    background-position:center;
+    background-size:cover;
+  }
+a{
+    font-family: Montserrat, sans-serif;
+}
+
+body{
+    background-color:#ffffff;
+    height:100%;
+}
+
+html{
+    scroll-behavior: smooth;
+    
+}
+
+button:focus{
+    outline:none!important;
+}
+
+.greyed{
+    background:rgb(27, 27, 27)!important;
+    opacity: 0.6;
+}
+.greyed:hover{
+    transform:none!important;
+}

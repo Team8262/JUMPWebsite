@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" style="height:100%">
+<head>
+  <title>Donate | JUMP Robotics</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" type="image/png" href="../assets/images/icon.svg?v=1"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/main.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="../js/loadtemplate.js"></script>
+  <style>
+    .don{
+      background: -webkit-linear-gradient(10deg, rgb(32, 145, 221), rgb(91, 17, 228));
+      border:none;
+      color:#ffffff;
+      height:5rem;
+      font-size:3.3vw;
+      font-weight:600;
+      transition: transform 300ms ease-in-out 15ms;
+
+    }
+    .don:hover{
+      transform:translateY(-1.5vh) scale(1.1);
+    }
+    button{
+    font-family: Montserrat, sans-serif;
+    }
+  </style>
+</head>
+<body>
+    <div data-include="header"></div>
+    <div class="container" style="height:70%;">
+      <h1 style="position:relative;top:30%;text-align:center;font-size:4rem;">Help Support Us</h1>
+    </div>
+    <div class="container">
+      <div class="row" style="text-align:center;position:relative;bottom:20vh;margin-bottom:30px">
+        <div class="col">
+          <button class="don greyed" onClick="load('')">PayPal Donation</button>
+        </div>
+        <div class="col">
+          <button class="don" onClick="load('www.patreon.com/jumprobotics', true)">Patreon Subscription</button>
+        </div>
+      </div>
+
+    </div>
+    <div class="container" style="text-align:center">
+      <p>JUMP Robotics is a registered 501(c)(3)</p>
+      <p>Our EIN is 84-3615795</p>
+    </div>
+
+    <div data-include="footer"></div>
+</body>
+</html>

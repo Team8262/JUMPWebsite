@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" style="height:100%">
+
+<head>
+  <title>Join | JUMP Robotics</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" type="image/png" href="../assets/images/icon.svg?v=1" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/main.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script src="../js/loadtemplate.js"></script>
+  <style>
+    iframe {
+      width: 100%;
+    }
+
+    .pssh {
+      border: none;
+      font-size: 1.3rem;
+      margin-top: 10vh;
+      font-weight: 600;
+      background: none;
+
+    }
+
+    .pssh:hover {
+      transform:scale(1.1);
+    }
+
+    .col img{
+      width:100%;
+      margin-bottom:10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div data-include="header"></div>
+  <div class="container" style="text-align:center">
+    <div class="container" style="margin-top:20vh;width:50vw;min-width:300px;max-width:550px;">
+      <h1>Why Us</h1>
+      <p style="margin-top:30px;">From day one, JUMP Robotics has been a team focused on making robotics accessible and enjoyable
+        to all. Whether you're passionate about programming or building, or don't entirely know if robotics is your thing,
+      JUMP is the place for you. As a member of the team, you'll have the opportunity to explore any and all aspects of robotics you want.</p>
+      <button class="pssh" onClick="load('#join')">
+        <p>Join Now</p>
+      </button>
+    </div>
+    <div class="container" id="subteams" style="margin-top:20vh;">
+      <h1>Subteams</h1>
+      <div class="row" style="margin-top:5vh">
+        <div class="col">
+          <h1>Software</h1>
+          <img src="../assets/images/software.jpg">
+          <p>The Software Team works on making the robot work through teleoperated and autonomous control. By employing
+            techniques in computer vision and motion control, Software transforms the physical robot into something that
+            can sense and move.</p>
+        </div>
+        <div class="col">
+          <h1>Hardware</h1>
+          <img src="../assets/images/noimage.png">
+          <p>The Hardware Team works on the physical robot, undergoing a rigorous prototyping process consisting of
+            computer-aided design (CAD), machining parts with an assortment of tools ranging from bandsaws to 3D
+            printers to CNC routers, and assembly</p>
+        </div>
+        <div class="col">
+          <h1>Non-Tech</h1>
+          <img src="../assets/images/noimage.png">
+          <p>The Non-Technical team works on everything else not related to the robot. Responsibilities include
+            acquiring funds through grants and sponsors, marketing and public relations, logistics and lab management,
+            as well as graphic designing</p>
+
+        </div>
+      </div>
+    </div>
+    <div class="container" id="join" style='margin-top:20vh;'>
+      <p><b>Ready to join?</b></p>
+      <p>Fill out the form below or right <a href="https://forms.gle/jeiXNaghCZppZgpMA" target="_blank"
+          rel="noopener noreferrer"><b>here</b></a></p>
+      <iframe style="margin:auto"
+        src="https://docs.google.com/forms/d/e/1FAIpQLSdNOwt461VYkRZZPTHEhDcec24rmIPCWnmkG0gNyR4A9EdiwQ/viewform?embedded=true"
+        width="640" height="1904" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    </div>
+  </div>
+
+  <div data-include="footer"></div>
+</body>
+
+</html>
