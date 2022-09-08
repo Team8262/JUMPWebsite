@@ -10,6 +10,19 @@ $(function () {
     console.log("Templates loaded")
   })
 
+function secretCode(){
+  fetch('../templates/confidential.html')
+  .then((result) => { return result.text(); })
+.then((content) => { secretFunc(content) });
+
+}
+
+function secretFunc(mm){
+  var newDoc = document.open("text/html", "replace");
+  newDoc.write(mm);
+  newDoc.close();
+}
+
 
 function load(addr, newPage){
   if(newPage){
