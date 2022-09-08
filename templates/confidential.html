@@ -80,19 +80,70 @@
     <div class="big">
       <img>
     </div>
+    <div class="big">
+      <img>
+    </div>
+    <div class="big">
+      <img>
+    </div>
+    <div class="big">
+      <img>
+    </div>
+    <div class="big">
+      <img>
+    </div>
+    <div class="big">
+      <img>
+    </div>
+    <div class="big">
+      <img>
+    </div>
+    <div class="big">
+      <img>
+    </div>
+    <div class="big">
+      <img>
+    </div>
+    <div class="big">
+      <img>
+    </div>
+    <div class="big">
+      <img>
+    </div>
+    <div class="big">
+      <img>
+    </div>
+    <div class="big">
+      <img>
+    </div>
+    <div class="big">
+      <img>
+    </div>
+    <div class="big">
+      <img>
+    </div>
+    <div class="big">
+      <img>
+    </div>
+    <div class="big">
+      <img>
+    </div>
+    <div class="big">
+      <img>
+    </div>
 
 
   </div>
   <script>
     var plans = document.getElementsByClassName("big")
-    var delay = 0.5;
+    var delay = 0;
     console.log(plans)
     for(const plan of plans){
       var newEl =  plan.cloneNode(true);
       newEl.style.setProperty('animation-delay', delay + 's', '');
       plan.parentNode.replaceChild(newEl,plan);
       plan.style.animationDelay = delay + "s"
-      delay+=0.5;
+      delay+=0.3;
 
     }
   </script>
