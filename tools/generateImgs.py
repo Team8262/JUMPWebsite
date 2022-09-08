@@ -19,6 +19,7 @@ def get(year):
         portrait = True if h  > w else False
         img['class'] = 'p' if portrait else 'l'
         img['src'] = j
+        img['alt'] = "Picture from JUMP's " + year + " season"
             
         if portrait:
             portraits.append(img)
