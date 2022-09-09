@@ -20,6 +20,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script src="../js/loadtemplate.js"></script>
+  <script>var easterEgg = konami()</script>
   <style> 
     .col {
       flex: 50%!important;
@@ -28,7 +29,7 @@
     }
     
     .col img {
-      margin-top: 8px;
+      margin-top: 20px;
       vertical-align: middle;
       width: 100%;
     }
@@ -84,6 +85,32 @@
     #yes{
       transition: transform 500ms ease-in-out 25ms;
     }
+
+    img{
+      animation:shrink 0.25s linear;
+      border-radius:5px;
+    }
+    img:hover{
+      animation: magnify 0.25s linear;
+      transform:scale(1.01);
+    }
+    @keyframes magnify{
+      from{
+        transform:scale(1);
+      }
+      to{
+        transform:scale(1.01);
+      }
+    }
+    @keyframes shrink{
+      from{
+        transform:scale(1.01);
+      }
+      to{
+        transform:scale(1);
+      }
+    }
+
   </style>
 </head>
 <body>

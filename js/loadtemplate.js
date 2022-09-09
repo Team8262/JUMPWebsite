@@ -39,6 +39,7 @@ var keyHandler = function (event) {
 
 	// If complete, alert and reset
 	if (pattern.length === current) {
+    current=0;
     ominousSeyoun()
 	}
 
@@ -49,7 +50,7 @@ function ominousSeyoun(){
   var audio = new Audio('../assets/audio/ofortuna.mp3');
   audio.play();
   setTimeout(function(){
-    sImage.style="position:fixed;top:35%;left:40%;animation:grow 50s linear;width:300px;height:200px;z-index:1031;background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../assets/images/seyoun.jpg');background-size:cover"
+    sImage.style="position:fixed;top:35%;left:40%;animation:grow 50s linear;width:300px;height:200px;z-index:1031;background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../assets/images/seyoun.jpg');background-size:cover"
     
     document.body.appendChild(sImage);
   }, 500)
@@ -62,8 +63,13 @@ function ominousSeyoun(){
 
 }
 
+function konami(){
+  //lmao this is such a cool and real function
+}
 // Listen for keydown events
 document.addEventListener('keydown', keyHandler, false);
+
+
 
 
 function load(addr, newPage){
