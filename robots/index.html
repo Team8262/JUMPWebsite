@@ -29,7 +29,7 @@
       border-radius:5px;
     }
     img{
-      animation:shrink 0.4s linear;
+      transition: transform 300ms ease-in-out 15ms;
     }
     img:hover{
       animation: magnify 0.4s linear;
@@ -41,14 +41,6 @@
       }
       to{
         transform:scale(1.02);
-      }
-    }
-    @keyframes shrink{
-      from{
-        transform:scale(1.02);
-      }
-      to{
-        transform:scale(1);
       }
     }
   </style>
