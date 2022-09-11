@@ -36,10 +36,13 @@
         position:absolute;
         width:5rem;
         height:5px;
+        transition:opacity 200ms ease-in-out;
+        opacity:0%;
+        background: -webkit-linear-gradient(10deg, rgb(32, 145, 221), rgb(91, 17, 228));
       }
 
       .nav-item:not(.hasButton):hover .underline{
-        background: -webkit-linear-gradient(10deg, rgb(32, 145, 221), rgb(91, 17, 228));
+        opacity:100%;
       }
 
       .dropdown-item:hover{
