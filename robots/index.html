@@ -20,6 +20,19 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script src="../js/loadtemplate.js"></script>
+  <script>
+    const vid2021 = document.createElement("video");
+    const vid2021Src = document.createElement("source")
+    vid2021Src.src = "https://www.youtube.com/watch?v=S2AeiF2jY7A"
+    vid2021.appendChild(vid2021Src)
+    vid2021.autoplay = "true"
+    const vid2022 = document.createElement("video")
+
+    function show(url, ele){
+      ele.appendChild(vid2021)
+      console.log("S")   
+    }
+  </script>
   <script>var easterEgg = konami()</script>
   <style>
     .card{
@@ -28,13 +41,15 @@
     .robo{
       border-radius:5px;
     }
+
+    /*
     img{
       transition: transform 300ms ease-in-out 15ms;
     }
     img:hover{
       animation: magnify 0.4s linear;
       transform:scale(1.02);
-    }
+    }*/
     @keyframes magnify{
       from{
         transform:scale(1);
@@ -42,6 +57,15 @@
       to{
         transform:scale(1.02);
       }
+    }
+
+    .vid{
+      opacity:0;
+      transition:opacity 300ms ease-in-out;
+    }
+
+    .card:hover .vid{
+      opacity:100%;
     }
   </style>
 </head>
@@ -56,15 +80,26 @@
     <div class="container card-deck" style="margin:auto;padding-bottom:5%;text-align:center">
       <div class="card">
         <h1>2022</h1>
-        <img class="robo" src="../assets/images/noimage.png" alt="JUMP Robotics FRC Team 8262 2022 Robot" width="100%">
+        <div style="width:100%;height:60%;">
+          <img class="robo" src="../assets/images/noimage.png" alt="JUMP Robotics FRC Team 8262 2022 Robot" width="100%" height="auto">
+        </div>
+        <div class="vid" style="position:absolute;right:0;top:56px;width:100%;height:60%">
+          <iframe width="100%" height="100%" src="https://www.youtube.com/embed/S2AeiF2jY7A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
        </div> 
-      <div class="card">
+      <div class="card" id="2021" onmouseover="show('https://www.youtube.com/watch?v=S2AeiF2jY7A', this)">
         <h1>2021</h1>
-        <img class="robo" src="../assets/images/robots/2021robot.png" alt="JUMP Robotics FRC Team 8262 2021 Robot" width="100%">
+        <div style="width:100%;height:60%;">
+          <img class="robo" src="../assets/images/robots/2021robot.png" alt="JUMP Robotics FRC Team 8262 2021 Robot" width="100%" height="auto">
+        </div>
+        <div class="vid" style="position:absolute;right:0;top:56px;width:100%;height:60%">
+          <iframe width="100%" height="100%" src="https://www.youtube.com/embed/S2AeiF2jY7A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
        </div> 
     </div>
 
 
     <div data-include="footer"></div>
+
 </body>
 </html>
