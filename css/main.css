@@ -16,6 +16,10 @@ a{
     font-family: Montserrat, sans-serif;
 }
 
+.hide{
+    display:none;
+}
+
 body{
     background-color:#ffffff;
     height:100%;

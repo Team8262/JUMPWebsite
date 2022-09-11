@@ -28,7 +28,8 @@
     }
 
     .auto-resizable-iframe {
-      max-width: 80vw;
+      max-width: 60%;
+      
       margin: 0px auto;
       margin-bottom:10vh;
     }
@@ -53,7 +54,7 @@
     <button onClick="secretCode()" style="display:none;"></button>
   
     <div data-include="header"></div>
-    <div class="" style="width:100%;padding-left:5%;padding-right:5%;height:100vh;margin-bottom:auto;">
+    <div class="" style="position:relative;width:100%;padding-left:5%;padding-right:5%;height:fit-content;margin-bottom:auto;">
       <div class="content row" style="margin-top:20vh;margin-bottom:15vh;">
         <div class="col">
           <div style="width:100%;min-width:250px;">
@@ -72,9 +73,12 @@
         </div>
 
       </div>
-      <div style="text-align:center;position:relative;bottom:50px;"><h1>Watch Our Video</h1></div>
+
     </div>
-    <div class="auto-resizable-iframe">
+    <div class="container" style="width:100%;position:relative;top:10%;">
+      <div style="width:100%;text-align:center;position:relative;bottom:0;"><h1>Watch Our Video</h1></div>
+    </div>
+    <div class="auto-resizable-iframe" style="position:relative;top:0;">
       <div>
         <iframe src="https://www.youtube.com/embed/sSZZp6XSVQY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>      </div>
     </div>
