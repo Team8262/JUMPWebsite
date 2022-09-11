@@ -18,7 +18,7 @@ def get(year):
         h,w,_ = im.shape
         portrait = True if h  > w else False
         img['class'] = 'p' if portrait else 'l'
-        img['src'] = "https://www.jumprobotics.org" + j[2:]
+        img['src'] = j#"https://www.jumprobotics.org" + j[2:]
         img['alt'] = "Picture from JUMP's " + year + " season"
             
         if portrait:
