@@ -87,8 +87,8 @@
     }
 
     img{
-      animation:shrink 0.25s linear;
       border-radius:5px;
+      transition: transform 300ms ease-in-out 15ms;
     }
     img:hover{
       animation: magnify 0.25s linear;
@@ -100,14 +100,6 @@
       }
       to{
         transform:scale(1.01);
-      }
-    }
-    @keyframes shrink{
-      from{
-        transform:scale(1.01);
-      }
-      to{
-        transform:scale(1);
       }
     }
 

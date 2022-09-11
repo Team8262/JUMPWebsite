@@ -52,7 +52,7 @@ function ominousSeyoun(){
   audio.play();
   setTimeout(function(){
     sImage.style="animation:grow 50s linear;width:300px;height:200px;background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../assets/images/seyoun.jpg');background-size:cover"
-    sContain.style="position:fixed;top:35%;left:40%;animation:jitter 0.1s linear infinite;z-index:1031"
+    sContain.style="position:fixed;top:35%;left:50%;margin-left:-150px;animation:jitter 0.1s linear infinite;z-index:1031"
 
     sContain.appendChild(sImage)
     document.body.appendChild(sContain);
