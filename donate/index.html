@@ -26,10 +26,14 @@
       background: -webkit-linear-gradient(10deg, rgb(32, 145, 221), rgb(91, 17, 228));
       border:none;
       color:#ffffff;
-      height:5rem;
+      height:fit-content;
       font-size:3.3vw;
       font-weight:600;
       transition: transform 300ms ease-in-out 15ms;
+      border-radius:5px;
+      padding: 15px 25px 15px 25px; /*Top, right, bottom, left*/
+      width:fit-content;
+      margin:auto;
 
     }
     .don:hover{
@@ -49,19 +53,23 @@
       <h1 style="position:relative;top:30%;text-align:center;font-size:4rem;">Help Support Us</h1>
     </div>
     <div class="container">
-      <div class="row" style="text-align:center;position:relative;bottom:20vh;margin-bottom:30px">
+      <div class="row" style="text-align:center;position:relative;bottom:20vh;margin-bottom:30px;height:fit-content;">
         <div class="col">
-          <button class="don greyed" onClick="load('')">PayPal Donation</button>
+          <div class="don" onClick="/*load('https://www.paypal.com/donate/?hosted_button_id=T9AVT5FB2ZRF2')*/"><a target="_blank" style="all:unset;position:relative;top:-10%;" href="https://www.paypal.com/donate/?hosted_button_id=T9AVT5FB2ZRF2">PayPal Donation</a></div>
         </div>
         <div class="col">
-          <button class="don" onClick="load('www.patreon.com/jumprobotics', true)"><a href="https://www.patreon.com/jumprobotics" style="all:unset;pointer-events:disabled">Patreon Subscription</a></button>
+          <div class="don" onClick="/*load('www.patreon.com/jumprobotics', true)*/"><a target="_blank" href="https://www.patreon.com/jumprobotics" style="all:unset;">Patreon Subscription</a></div>
         </div>
       </div>
-
+      <div class="" style="text-align:center;position:relative;bottom:5vh;">
+        <p>
+          For corporate sponsorships, contact us at <b><a href="mailto:support@jumprobotics.org">support@jumprobotics.org</a></b>
+        </p>
+      </div>
     </div>
-    <div class="container" style="text-align:center">
-      <p>JUMP Robotics is a registered 501(c)(3)</p>
-      <p>Our EIN is 84-3615795</p>
+    <div class="container" style="text-align:center;font-size:0.8rem">
+      <p style="margin:0;">JUMP Robotics is a registered 501(c)(3)</p>
+      <p style="margin:0;">Our EIN is 84-3615795</p>
     </div>
 
     <div data-include="footer"></div>
