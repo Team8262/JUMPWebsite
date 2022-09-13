@@ -45,7 +45,7 @@ var konamiHandler = function (event) {
 var kenjiPattern = ['k','e','n','j','i'];
 var kenjiCurrent = 0;
 
-var konamiHandler = function (event) {
+var kenjiHandler = function (event) {
 	// If the key isn't in the pattern, or isn't the current key in the pattern, reset
 	if (kenjiPattern.indexOf(event.key) < 0 || event.key !== kenjiPattern[kenjiCurrent]) {
 		kenjiCurrent = 0;
@@ -146,11 +146,13 @@ function konami(){
   //lmao this is such a cool and real function
   //but still try it out
   //nyanHandler => nyanZoom()
+  //kenjiHandler => ominousKenji()
   //
 }
 // Listen for keydown events
 document.addEventListener('keydown', konamiHandler, false);
 document.addEventListener('keydown', nyanHandler, false);
+document.addEventListener('keydown', kenjiHandler, false);
 
 
 
