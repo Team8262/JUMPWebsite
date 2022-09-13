@@ -57,6 +57,10 @@ button:focus{
     to { transform: translatex(900%);}
 }
 
+@keyframes bob{
+    to{transform:translatey(20px);}
+}
+
 @keyframes jitter{
     0%{transform:rotate(0)}
     25%{transform:rotate(0.5deg)}

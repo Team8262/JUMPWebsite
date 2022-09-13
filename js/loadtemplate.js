@@ -61,6 +61,24 @@ var kenjiHandler = function (event) {
 	}
 };
 
+var shaanPattern = ['s','h','a','a','n'];
+var shaanCurrent = 0;
+
+var shaanHandler = function (event) {
+	// If the key isn't in the pattern, or isn't the current key in the pattern, reset
+	if (shaanPattern.indexOf(event.key) < 0 || event.key !== shaanPattern[shaanCurrent]) {
+		shaanCurrent = 0;
+		return;
+	}
+	// Update how much of the pattern is complete
+	shaanCurrent++;
+
+	// If complete, alert and reset
+	if (shaanPattern.length === shaanCurrent) {
+    document.body.appendChild(shaan)
+    runShaan();	}
+};
+
 var nyanPattern = ['n', 'y', 'a', 'n'];
 var nyanCurrent = 0;
 
@@ -153,6 +171,7 @@ function konami(){
 document.addEventListener('keydown', konamiHandler, false);
 document.addEventListener('keydown', nyanHandler, false);
 document.addEventListener('keydown', kenjiHandler, false);
+document.addEventListener('keydown', shaanHandler, false);
 
 
 
@@ -167,6 +186,11 @@ function flicker(){
 }
 
 
+const shaan = document.createElement("img")
+shaan.src="../assets/images/shaan.png"
+shaan.style="position:fixed;top:30%;animation:bob 1s alternate ease-in-out infinite;z-index:99999"
+shaan.style.width="200px";
+shaan.style.height="auto";
 
 
 function load(addr, newPage){
