@@ -42,6 +42,25 @@ var konamiHandler = function (event) {
 	}
 };
 
+var kenjiPattern = ['k','e','n','j','i'];
+var kenjiCurrent = 0;
+
+var konamiHandler = function (event) {
+	// If the key isn't in the pattern, or isn't the current key in the pattern, reset
+	if (kenjiPattern.indexOf(event.key) < 0 || event.key !== kenjiPattern[kenjiCurrent]) {
+		kenjiCurrent = 0;
+		return;
+	}
+	// Update how much of the pattern is complete
+	kenjiCurrent++;
+
+	// If complete, alert and reset
+	if (kenjiPattern.length === kenjiCurrent) {
+    kenjiCurrent=0;
+    ominousKenji()
+	}
+};
+
 var nyanPattern = ['n', 'y', 'a', 'n'];
 var nyanCurrent = 0;
 
@@ -66,7 +85,6 @@ function nyanZoom(){
   var nImage = document.createElement("div")
   var nContain = document.createElement("div")
   var nOutOut = document.createElement("div")
-  console.log("mm")
   setTimeout(function(){
     nImage.style="animation:jitter 0.5s linear infinite;width:300px;height:200px;background: url('../assets/images/nyan.jpg');background-size:cover"
     nContain.style="animation:translate 3s linear;"
@@ -98,6 +116,27 @@ function ominousSeyoun(){
   audio.addEventListener("ended", function() 
   {
     sImage.remove()
+  });
+
+
+}
+
+function ominousKenji(){
+  var kImage = document.createElement("div")
+  var audio = new Audio('../assets/audio/darksoulsboss.mp3');
+  var kContain = document.createElement("div")
+  audio.play();
+  setTimeout(function(){
+    kImage.style="animation:grow 60s linear;width:300px;height:400px;background: url('../assets/images/kenji.jpg');background-size:cover"
+    kContain.style="position:fixed;top:35%;left:50%;margin-left:-150px;animation:jitter 0.1s linear infinite;z-index:1031"
+ 
+    kContain.appendChild(kImage)
+    document.body.appendChild(kContain);
+  }, 500)
+
+  audio.addEventListener("ended", function() 
+  {
+    kImage.remove()
   });
 
 
