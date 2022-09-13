@@ -197,6 +197,10 @@ shaanImg.style.height="auto";
 shaan.style="position:fixed;top:30%;z-index:99999;animation:crawl 100s ease-in-out infinite;"
 shaan.appendChild(shaanImg)
 
+function runShaan(){
+  //Figure out later
+}
+
 
 function load(addr, newPage){
   if(newPage){
