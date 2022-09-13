@@ -1,5 +1,6 @@
 var loaded = false
 
+
 $(function () {
     var includes = $('[data-include]')
     $.each(includes, function () {
@@ -186,11 +187,15 @@ function flicker(){
 }
 
 
-const shaan = document.createElement("img")
-shaan.src="../assets/images/shaan.png"
-shaan.style="position:fixed;top:30%;animation:bob 1s alternate ease-in-out infinite;z-index:99999"
-shaan.style.width="200px";
-shaan.style.height="auto";
+const shaan = document.createElement("div")
+const shaanImg = document.createElement("img")
+shaanImg.src="../assets/images/shaan.png"
+shaanImg.style="animation:bob 1s alternate ease-in-out infinite;"
+shaanImg.style.width="200px";
+shaanImg.style.height="auto";
+
+shaan.style="position:fixed;top:30%;z-index:99999;animation:crawl 100s ease-in-out infinite;"
+shaan.appendChild(shaanImg)
 
 
 function load(addr, newPage){

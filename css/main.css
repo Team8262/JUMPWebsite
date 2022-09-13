@@ -61,6 +61,24 @@ button:focus{
     to{transform:translatey(20px);}
 }
 
+@keyframes crawl{
+    0% {
+        left: -250px;
+      transform: scaleX(1);
+    }
+    49.999% {
+      transform: scaleX(1);
+    }
+    50% {
+      left: calc(100%);
+      transform: scaleX(-1);
+    }
+    100% {
+      left: -250px;
+      transform: scaleX(-1);
+    }
+}
+
 @keyframes jitter{
     0%{transform:rotate(0)}
     25%{transform:rotate(0.5deg)}
