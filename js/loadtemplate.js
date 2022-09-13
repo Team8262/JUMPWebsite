@@ -62,6 +62,25 @@ var kenjiHandler = function (event) {
 	}
 };
 
+var translatePattern = ['n','e','w'];
+var translateCurrent = 0;
+
+var translateHandler = function (event) {
+	// If the key isn't in the pattern, or isn't the current key in the pattern, reset
+	if (translatePattern.indexOf(event.key) < 0 || event.key !== translatePattern[translateCurrent]) {
+		translateCurrent = 0;
+		return;
+	}
+	// Update how much of the pattern is complete
+	translateCurrent++;
+
+	// If complete, alert and reset
+	if (translatePattern.length === translateCurrent) {
+    translateCurrent=0;
+    accessibleWebsite()
+	}
+};
+
 var shaanPattern = ['s','h','a','a','n'];
 var shaanCurrent = 0;
 
@@ -94,6 +113,7 @@ var nyanHandler = function (event) {
 	// If complete, alert and reset
 	if (nyanPattern.length === nyanCurrent) {
     nyanCurrent=0;
+    console.log("nyan")
     for(var i =0;i<50;i++){
       setTimeout(function(){nyanZoom()}, i*200)
       if(i%3==0){setTimeout(function(){var nAudio = new Audio("../assets/audio/carnoise.mp3");nAudio.preservesPitch=false;nAudio.playbackRate=1+(Math.random()-0.5)*0.2;nAudio.play()}, i*200+(Math.random()*10-5)*25)}}
@@ -120,6 +140,7 @@ function nyanZoom(){
 }
 
 function ominousSeyoun(){
+  console.log("Konami triggered")
   var sImage = document.createElement("div")
   var audio = new Audio('../assets/audio/ofortuna.mp3');
   var sContain = document.createElement("div")
@@ -141,6 +162,7 @@ function ominousSeyoun(){
 }
 
 function ominousKenji(){
+  console.log("kenji triggered")
   var kImage = document.createElement("div")
   var audio = new Audio('../assets/audio/darksoulsboss.mp3');
   var kContain = document.createElement("div")
@@ -173,6 +195,25 @@ document.addEventListener('keydown', konamiHandler, false);
 document.addEventListener('keydown', nyanHandler, false);
 document.addEventListener('keydown', kenjiHandler, false);
 document.addEventListener('keydown', shaanHandler, false);
+document.addEventListener('keydown', translateHandler, false);
+
+
+function loadLang(code){
+  history.pushState("", document.title, window.location.pathname
+  + window.location.search);
+      window.location = window.location + '#googtrans(en|'+code+')';
+      window.location.reload();
+  }; 
+
+function accessibleWebsite(){
+  var codes = ['fr','id','es','it','de','ja','lv','ms','mk','zu','ro','ru','ko','lb']
+  var newLang = codes[Math.floor(Math.random()*codes.length)]
+  console.log("Now " + newLang);
+  loadLang(newLang);
+}
+
+
+
 
 
 
@@ -191,13 +232,14 @@ const shaan = document.createElement("div")
 const shaanImg = document.createElement("img")
 shaanImg.src="../assets/images/shaan.png"
 shaanImg.style="animation:bob 1s alternate ease-in-out infinite;"
-shaanImg.style.width="200px";
-shaanImg.style.height="auto";
+shaanImg.style.width="auto";
+shaanImg.style.height="60vh";
 
-shaan.style="position:fixed;top:30%;z-index:99999;animation:crawl 100s ease-in-out infinite;"
+shaan.style="position:fixed;bottom:50px;z-index:99999;animation:crawl 80s linear infinite;"
 shaan.appendChild(shaanImg)
 
 function runShaan(){
+  console.log("Shaan?")
   //Figure out later
 }
 

@@ -43,6 +43,17 @@ button:focus{
     transform:none!important;
 }
 
+.goog-te-banner-frame{
+    display:none!important;
+    visibility:none!important;
+
+}
+
+#google_translate_element{
+    display:none!important;
+}
+
+
 @keyframes grow{
     0% { transform:scale(1)}
     50%{ transform:scale(5)}
