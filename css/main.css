@@ -49,6 +49,14 @@ button:focus{
     100% {transform:scale(1)}
 }
 
+@keyframes upDown{
+    to { transform: translatey(20px);}
+}
+
+@keyframes translate{
+    to { transform: translatex(900%);}
+}
+
 @keyframes jitter{
     0%{transform:rotate(0)}
     25%{transform:rotate(0.5deg)}

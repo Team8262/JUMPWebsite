@@ -23,27 +23,64 @@ function secretFunc(mm){
   newDoc.close();
 }
 
-var pattern = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
-var current = 0;
+var konamiPattern = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+var konamiCurrent = 0;
 
-var keyHandler = function (event) {
-
+var konamiHandler = function (event) {
 	// If the key isn't in the pattern, or isn't the current key in the pattern, reset
-	if (pattern.indexOf(event.key) < 0 || event.key !== pattern[current]) {
-		current = 0;
+	if (konamiPattern.indexOf(event.key) < 0 || event.key !== konamiPattern[konamiCurrent]) {
+		konamiCurrent = 0;
 		return;
 	}
-
 	// Update how much of the pattern is complete
-	current++;
+	konamiCurrent++;
 
 	// If complete, alert and reset
-	if (pattern.length === current) {
-    current=0;
+	if (konamiPattern.length === konamiCurrent) {
+    konamiCurrent=0;
     ominousSeyoun()
 	}
-
 };
+
+var nyanPattern = ['n', 'y', 'a', 'n'];
+var nyanCurrent = 0;
+
+var nyanHandler = function (event) {
+	// If the key isn't in the pattern, or isn't the current key in the pattern, reset
+	if (nyanPattern.indexOf(event.key) < 0 || event.key !== nyanPattern[nyanCurrent]) {
+		nyanCurrent = 0;
+		return;
+	}
+	// Update how much of the pattern is complete
+	nyanCurrent++;
+	// If complete, alert and reset
+	if (nyanPattern.length === nyanCurrent) {
+    nyanCurrent=0;
+    for(var i =0;i<50;i++){
+      setTimeout(function(){nyanZoom()}, i*200)
+      if(i%3==0){setTimeout(function(){var nAudio = new Audio("../assets/audio/carnoise.mp3");nAudio.preservesPitch=false;nAudio.playbackRate=1+(Math.random()-0.5)*0.2;nAudio.play()}, i*200+(Math.random()*10-5)*25)}}
+	}
+};
+
+function nyanZoom(){
+  var nImage = document.createElement("div")
+  var nContain = document.createElement("div")
+  var nOutOut = document.createElement("div")
+  console.log("mm")
+  setTimeout(function(){
+    nImage.style="animation:jitter 0.5s linear infinite;width:300px;height:200px;background: url('../assets/images/nyan.jpg');background-size:cover"
+    nContain.style="animation:translate 3s linear;"
+    nOutOut.style="position:fixed;top:"+(Math.floor(Math.random()*10)*10-20)+"%;animation:upDown 0.2s alternate infinite ease-in-out;z-index:1031"
+
+    nContain.appendChild(nImage)
+    nOutOut.appendChild(nContain)
+    document.body.appendChild(nOutOut);
+    setTimeout(function(){
+      nOutOut.remove()
+    }, 3000)
+  }, Math.floor(Math.random*5)*500)
+
+}
 
 function ominousSeyoun(){
   var sImage = document.createElement("div")
@@ -69,9 +106,13 @@ function ominousSeyoun(){
 function konami(){
   //lmao this is such a cool and real function
   //but still try it out
+  //nyanHandler => nyanZoom()
+  //
 }
 // Listen for keydown events
-document.addEventListener('keydown', keyHandler, false);
+document.addEventListener('keydown', konamiHandler, false);
+document.addEventListener('keydown', nyanHandler, false);
+
 
 
 const blackScreen = document.createElement("div")
