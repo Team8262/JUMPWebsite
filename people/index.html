@@ -22,6 +22,21 @@
   <script src="../js/loadtemplate.js"></script>
   <script>var easterEgg = konami()</script>
   <script>
+    const zachs=['posterbrandt.jpg', 'tallbrandt.jpg', 'zbrandthi.jpg', 'zbrandtscary.jpg']
+
+    function zbrandt(){
+      var photos = document.getElementsByClassName("s")
+      console.log(photos)
+      for(const pic of photos){
+        pic.src="../assets/images/zbrandt/" +zachs[Math.floor(Math.random()*zachs.length)]
+      }
+      var cards = document.getElementsByClassName("flip-card-back")
+      for(const card of cards){
+        let children = card.children;
+        children[0].textContent = "Zachary Brandt"
+        children[1].textContent = "Newest member of JUMP"
+      }
+    }
     function mm(){
       var photos = document.getElementsByClassName("s")
       console.log(photos)
