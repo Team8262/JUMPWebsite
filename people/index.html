@@ -37,6 +37,21 @@
 
 
       }
+
+      function actual(){
+        var photos = document.getElementsByClassName("s")
+        console.log(photos)
+        for(const pic of photos){
+          pic.src="../assets/images/people/kenji0.jpg"
+        }
+        var cards = document.getElementsByClassName("flip-card-back")
+        for(const card of cards){
+          let children = card.children;
+          children[0].textContent = "Kenji"
+          children[1].textContent = "The One Man Team"
+        }
+      }
+
       function updateText(){
         if(loaded===false){
           window.setTimeout(updateText, 100);
