@@ -34,6 +34,8 @@
       padding: 15px 25px 15px 25px; /*Top, right, bottom, left*/
       width:fit-content;
       margin:auto;
+      min-width:300px;
+      margin-top:40px;
 
     }
     .don:hover{
@@ -149,13 +151,27 @@
       }
     }
 
-    /*1200px is the breakpoint for navbar xl*/
-    @media screen and (max-width:1200px) {
-      .but {
-        border-radius: 0;
-        width:100%;
+
+  </style>
+
+  <style>
+    #coolheader{
+      position:relative;
+      top:30%;
+      text-align:center;
+      font-size:4rem;
+    }
+
+    @media screen and (max-width:400px) {
+      #coolheader{
+        font-size:3rem;
       }
     }
+
+    .don{
+      font-size:1.5rem;
+    }
+
   </style>
 </head>
 <body>
@@ -222,7 +238,7 @@
     </nav>
     
     <div class="container" style="height:70%;">
-      <h1 style="position:relative;top:30%;text-align:center;font-size:4rem;">Help Support Us</h1>
+      <h1 id="coolheader" style="">Help Support Us</h1>
     </div>
     <div class="container">
       <div class="row" style="text-align:center;position:relative;bottom:20vh;margin-bottom:30px;height:fit-content;">
