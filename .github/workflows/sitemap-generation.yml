@@ -2,13 +2,15 @@ name: Generate sitemap
 
 on:
   push:
-    branches: [ staging ]
-    paths: [ '**.html', '**.pdf' ]
+    branches: 
+        - 'main'
+    paths: 
+        - '**.html'
 
 jobs:
-  sitemap_job:
+  sitemap:
     runs-on: ubuntu-latest
-    name: Generate a sitemap
+
     steps:
     - name: Checkout the repo
       uses: actions/checkout@v3
@@ -19,7 +21,7 @@ jobs:
       id: sitemap
       uses: cicirello/generate-sitemap@v1
       with:
-        base-url-path: https://www.cicirello.org/
+        base-url-path: https://actions.cicirello.org/
     
     - name: Output stats
       run: |
@@ -27,16 +29,12 @@ jobs:
         echo "url-count = ${{ steps.sitemap.outputs.url-count }}"
         echo "excluded-count = ${{ steps.sitemap.outputs.excluded-count }}"
     
-    - name: Create Pull Request
-      uses: peter-evans/create-pull-request@v4.1.1
-      with:
-        title: "Automated sitemap update"
-        body: > 
-          Automated changes. Sitemap updated by 
-          the [generate-sitemap](https://github.com/cicirello/generate-sitemap) 
-          GitHub action.  
-        commit-message: "Automated sitemap update."
-        author: Vincent A. Cicirello <cicirello@users.noreply.github.com>
-        committer: Vincent A. Cicirello <cicirello@users.noreply.github.com>
-        branch: create-pull-request/sitemap
-        delete-branch: true
+    - name: Commit and push
+      run: |
+        if [[ `git status --porcelain sitemap.xml` ]]; then
+          git config --global user.name 'WT-MM'
+          git config --global user.email 'wesley.maa@gmail.com'
+          git add sitemap.xml
+          git commit -m "Automated sitemap update" sitemap.xml
+          git push
+        fi
