@@ -4,7 +4,7 @@ var loaded = false
 $(function () {
     var includes = $('[data-include]')
     $.each(includes, function () {
-      var file = 'https://www.jumprobotics.org/templates/' + $(this).data('include') + '.html'
+      var file = '../templates/' + $(this).data('include') + '.html'
       $(this).load(file)
     })
     loaded=true
