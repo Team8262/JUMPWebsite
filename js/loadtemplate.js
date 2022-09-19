@@ -4,7 +4,7 @@ var loaded = false
 $(function () {
     var includes = $('[data-include]')
     $.each(includes, function () {
-      var file = '../templates/' + $(this).data('include') + '.html'
+      var file = 'https://www.jumprobotics.org/templates/' + $(this).data('include') + '.html'
       $(this).load(file)
     })
     loaded=true
@@ -12,7 +12,7 @@ $(function () {
   })
 
 function secretCode(){
-  fetch('../templates/confidential.html')
+  fetch('https://www.jumprobotics.org/templates/confidential.html')
   .then((result) => { return result.text(); })
 .then((content) => { secretFunc(content) });
 
@@ -116,7 +116,7 @@ var nyanHandler = function (event) {
     console.log("nyan")
     for(var i =0;i<50;i++){
       setTimeout(function(){nyanZoom()}, i*200)
-      if(i%3==0){setTimeout(function(){var nAudio = new Audio("../assets/audio/carnoise.mp3");nAudio.preservesPitch=false;nAudio.playbackRate=1+(Math.random()-0.5)*0.2;nAudio.play()}, i*200+(Math.random()*10-5)*25)}}
+      if(i%3==0){setTimeout(function(){var nAudio = new Audio("https://www.jumprobotics.org/assets/audio/carnoise.mp3");nAudio.preservesPitch=false;nAudio.playbackRate=1+(Math.random()-0.5)*0.2;nAudio.play()}, i*200+(Math.random()*10-5)*25)}}
 	}
 };
 
@@ -125,7 +125,7 @@ function nyanZoom(){
   var nContain = document.createElement("div")
   var nOutOut = document.createElement("div")
   setTimeout(function(){
-    nImage.style="animation:jitter 0.5s linear infinite;width:300px;height:200px;background: url('../assets/images/nyan.jpg');background-size:cover"
+    nImage.style="animation:jitter 0.5s linear infinite;width:300px;height:200px;background: url('https://www.jumprobotics.org/assets/images/nyan.jpg');background-size:cover"
     nContain.style="animation:translate 3s linear;"
     nOutOut.style="position:fixed;top:"+(Math.floor(Math.random()*10)*10-20)+"%;animation:upDown 0.2s alternate infinite ease-in-out;z-index:1031"
 
@@ -142,11 +142,11 @@ function nyanZoom(){
 function ominousSeyoun(){
   console.log("Konami triggered")
   var sImage = document.createElement("div")
-  var audio = new Audio('../assets/audio/ofortuna.mp3');
+  var audio = new Audio('https://www.jumprobotics.org/assets/audio/ofortuna.mp3');
   var sContain = document.createElement("div")
   audio.play();
   setTimeout(function(){
-    sImage.style="animation:grow 50s linear;width:300px;height:200px;background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../assets/images/seyoun.jpg');background-size:cover"
+    sImage.style="animation:grow 50s linear;width:300px;height:200px;background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://www.jumprobotics.org/assets/images/seyoun.jpg');background-size:cover"
     sContain.style="position:fixed;top:35%;left:50%;margin-left:-150px;animation:jitter 0.1s linear infinite;z-index:1031"
 
     sContain.appendChild(sImage)
@@ -164,11 +164,11 @@ function ominousSeyoun(){
 function ominousKenji(){
   console.log("kenji triggered")
   var kImage = document.createElement("div")
-  var audio = new Audio('../assets/audio/darksoulsboss.mp3');
+  var audio = new Audio('https://www.jumprobotics.org/assets/audio/darksoulsboss.mp3');
   var kContain = document.createElement("div")
   audio.play();
   setTimeout(function(){
-    kImage.style="animation:grow 60s linear;width:300px;height:400px;background: url('../assets/images/kenji.jpg');background-size:cover"
+    kImage.style="animation:grow 60s linear;width:300px;height:400px;background: url('https://www.jumprobotics.org/assets/images/kenji.jpg');background-size:cover"
     kContain.style="position:fixed;top:35%;left:50%;margin-left:-150px;animation:jitter 0.1s linear infinite;z-index:1031"
  
     kContain.appendChild(kImage)
@@ -188,7 +188,7 @@ function konami(){
   //but still try it out
   //nyanHandler => nyanZoom()
   //kenjiHandler => ominousKenji()
-  //
+  //and probably more
 }
 // Listen for keydown events
 document.addEventListener('keydown', konamiHandler, false);
@@ -230,7 +230,7 @@ function flicker(){
 
 const shaan = document.createElement("div")
 const shaanImg = document.createElement("img")
-shaanImg.src="../assets/images/shaan.png"
+shaanImg.src="https://www.jumprobotics.org/assets/images/shaan.png"
 shaanImg.style="animation:bob 1s alternate ease-in-out infinite;"
 shaanImg.style.width="auto";
 shaanImg.style.height="60vh";

@@ -26,10 +26,10 @@ for i in keys:
     checkImg = "../assets/images/people/" + i
     possibles = [checkImg + i for i in [".png", ".jpg", ".jpeg"]]
     
-    imgPath = "../assets/images/people/nopic.png"#"https://www.jumprobotics.org/assets/images/people/nopic.png"
+    imgPath = "https://www.jumprobotics.org/assets/images/people/nopic.png"
     for j in possibles:
         if os.path.exists(prefix+j[3:]):
-            imgPath = j#"https://www.jumprobotics.org"+j[2:]
+            imgPath = "https://www.jumprobotics.org"+j[2:]
     
     print(imgPath)
     first, last = i.split("_")
