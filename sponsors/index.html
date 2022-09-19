@@ -126,6 +126,24 @@
       }
     }
   </style>
+
+  <style>
+    .card{
+      border:none!important;
+      max-width:400px;
+      margin-left:50px;
+      margin-right:50px;
+      margin-top:30px;
+      max-height:400px;
+
+    }
+
+    .card img{
+      width:100%;
+      height:100%;
+      object-fit:scale-down;
+    }
+  </style>
 </head>
 <body>
   <nav class="navbar navbar-expand-xl fixed-top">
@@ -161,7 +179,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://www.jumprobotics.org/join">Sponsors
+          <a class="nav-link" href="https://www.jumprobotics.org/sponsors">Sponsors
             <div style="width:6rem;" class="underline"></div>
           </a>
         </li>
@@ -184,7 +202,25 @@
     </div>
     </ul>
     </div>
-  </nav>    <div class="container h-100"></div>
-    <div data-include="footer"></div>
+  </nav>
+  <div class="container" style="min-height:100vh;position:relative;">
+    <div class="container" style="position:relative;text-align:center;top:120px">
+      <h1>Our Sponsors</h1>
+      <div class="row" style="padding-bottom:30vh;padding-top:40px;">
+        <div class="card mx-auto">
+            <img class="" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/PayPal.svg/2560px-PayPal.svg.png" alt="PayPal Logo">
+
+         </div> 
+        <div class="card mx-auto">
+            <img class="" src="../assets/images/solidworks.png" alt="SolidWorks Logo">
+         </div> 
+         <div class="card mx-auto">
+          <img class="" src="../assets/images/frc.jpg" alt="FIRST Logo">
+       </div> 
+      </div>
+    </div>
+  </div>
+
+  <div data-include="footer"></div>
 </body>
 </html>
