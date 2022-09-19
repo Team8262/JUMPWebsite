@@ -5,35 +5,32 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <style>
-      .navbar{
-        background-color:#ffffff;
-        font-size:1.1rem;
-        opacity:90%
+      .navbar {
+        background-color: #ffffff;
+        font-size: 1.1rem;
+        opacity: 90%;
       }
+  
       .custom-toggler .navbar-toggler-icon {
         background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(191, 215, 255)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
       }
+  
       .custom-toggler.navbar-toggler {
-        border-color:#bfd7ff;
-      } 
-      .custom-toggler:hover{
-        background-color:#d9dade;
+        border-color: #bfd7ff;
       }
-      .navbar-brand:hover{
+  
+      .custom-toggler:hover {
+        background-color: #d9dade;
+      }
+  
+      .navbar-brand:hover {
         filter: brightness(85%);
       }
-      .nav-item{
-        padding-left:5vw;
+  
+      .nav-item {
+        padding-left: 5vw;
       }
-
-      li a{
-        font-weight:500;
-        font-size:1.3rem;
-        background: -webkit-linear-gradient(10deg, rgb(32, 145, 221), rgb(91, 17, 228));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-
+  
       .underline{
         display:block;
         position:absolute;
@@ -43,57 +40,57 @@
         opacity:0%;
         border-radius:3px;
         background: -webkit-linear-gradient(10deg, rgb(32, 145, 221), rgb(91, 17, 228));
+  
       }
-
+  
       .nav-item:not(.hasButton):hover .underline{
         opacity:100%;
       }
-
-      .dropdown-item:hover{
-        filter:brightness(70%);
+  
+      .but:hover {
+        filter: brightness(120%);
+        cursor: pointer;
       }
-
-      .but:hover{
-        filter:brightness(120%);
-        cursor:pointer;
-      }
-
-      .but{
+  
+      .but {
         background: -webkit-linear-gradient(10deg, rgb(32, 145, 221), rgb(91, 17, 228));
-        border:none;
-        color:#ffffff;
-        border-radius:5px;
+        border: none;
+        color: #ffffff;
+        border-radius: 5px;
         width:130%;
+  
       }
-
-
-
-
-      .nav-item.a{
+  
+  
+  
+      li a{
+        font-weight:500;
+        font-size:1.3rem;
         background: -webkit-linear-gradient(10deg, rgb(32, 145, 221), rgb(91, 17, 228));
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }
-
-      .dropdown-item{
-        background: -webkit-linear-gradient(10deg, rgb(32, 145, 221), rgb(91, 17, 228));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        font-weight:500!important;
-        width:100%;
-      }
-
-      .dropdown:hover .dropdown-menu{
+      .dropdown:hover .dropdown-menu {
         display: block;
-        margin-top: 0
-        margin-left:20%;
+        margin-top: 0;
+        margin-left: 20%;
       }
-
+  
+      .dropdown-item:hover {
+        filter: brightness(70%);
+      }
+  
+      .dropdown-item {
+        background: -webkit-linear-gradient(10deg, rgb(32, 145, 221), rgb(91, 17, 228));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        width: 100%;
+        font-weight:500!important;
+      }
       .dropdown-menu{
         position:relative;
         top:80%!important;
       }
-
       @media screen and (max-width:1400px){
         .hasButton{
           padding-left:1vw;
@@ -102,7 +99,7 @@
           width:110%;
         }
       }
-
+  
       @media screen and (max-width:1600px){
         .hasButton{
           padding-left:2vw;
@@ -111,31 +108,28 @@
           width:120%;
         }
       }
-
+  
       /*1200px is the breakpoint for navbar xl*/
-      @media screen and (max-width:1200px){
-        .but{
-          border-radius:0;
+      @media screen and (max-width:1200px) {
+        .but {
+          border-radius: 0;
           width:100%;
         }
       }
-
-
-
     </style>
   </head>
   <body>
     <nav class="navbar navbar-expand-xl fixed-top">
 
       <div class="navbar-brand" style="padding-left:2vw;">
-        <a href="https://www.jumprobotics.org/">
-        <img style="position:relative;bottom:3px;height:30px;height:60px;" src='https://www.jumprobotics.org/assets/images/logo.svg'>
-        </a>
-      </div>    
-      <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown">
+        <a href="https://www.jumprobotics.org">
+          <img style="position:relative;bottom:3px;height:30px;height:60px;" src='https://www.jumprobotics.org/assets/images/logo.svg'>
+          </a>
+      </div>
+      <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="navbar-collapse collapse" id="navbarNavDropdown" toggle="collapse" data-target=".navbar-collapse">
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav">
           <li class="nav-item">
             <a class="nav-link" href="https://www.jumprobotics.org/about">About Us
@@ -166,7 +160,8 @@
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink">
               More
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="border:none;background-color:#ffffff">
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"
+              style="border:none;background-color:#ffffff">
               <a class="dropdown-item" href="https://www.jumprobotics.org/media">Media</a>
               <a class="dropdown-item" href="https://www.jumprobotics.org/machining">Machining</a>
             </div>
@@ -175,9 +170,10 @@
             <button class="nav-link but" onclick="load('https://www.jumprobotics.org/donate')">
               Donate
               <a style="display:none" href="https://www.jumprobotics.org/donate"></a>
-            </button>          </li>
-          </div>
-        </ul>
+            </button>
+          </li>
+      </div>
+      </ul>
       </div>
     </nav>
 

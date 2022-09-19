@@ -43,13 +43,184 @@
     font-family: Montserrat, sans-serif;
     }
   </style>
+
+  <style>
+    .navbar {
+      background-color: #ffffff;
+      font-size: 1.1rem;
+      opacity: 90%;
+    }
+
+    .custom-toggler .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(191, 215, 255)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    }
+
+    .custom-toggler.navbar-toggler {
+      border-color: #bfd7ff;
+    }
+
+    .custom-toggler:hover {
+      background-color: #d9dade;
+    }
+
+    .navbar-brand:hover {
+      filter: brightness(85%);
+    }
+
+    .nav-item {
+      padding-left: 5vw;
+    }
+
+    .underline{
+      display:block;
+      position:absolute;
+      width:5rem;
+      height:5px;
+      transition:opacity 200ms ease-in-out;
+      opacity:0%;
+      border-radius:3px;
+      background: -webkit-linear-gradient(10deg, rgb(32, 145, 221), rgb(91, 17, 228));
+
+    }
+
+    .nav-item:not(.hasButton):hover .underline{
+      opacity:100%;
+    }
+
+    .but:hover {
+      filter: brightness(120%);
+      cursor: pointer;
+    }
+
+    .but {
+      background: -webkit-linear-gradient(10deg, rgb(32, 145, 221), rgb(91, 17, 228));
+      border: none;
+      color: #ffffff;
+      border-radius: 5px;
+      width:130%;
+
+    }
+
+
+
+    li a{
+      font-weight:500;
+      font-size:1.3rem;
+      background: -webkit-linear-gradient(10deg, rgb(32, 145, 221), rgb(91, 17, 228));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .dropdown:hover .dropdown-menu {
+      display: block;
+      margin-top: 0;
+      margin-left: 20%;
+    }
+
+    .dropdown-item:hover {
+      filter: brightness(70%);
+    }
+
+    .dropdown-item {
+      background: -webkit-linear-gradient(10deg, rgb(32, 145, 221), rgb(91, 17, 228));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      width: 100%;
+      font-weight:500!important;
+    }
+    .dropdown-menu{
+      position:relative;
+      top:80%!important;
+    }
+    @media screen and (max-width:1400px){
+      .hasButton{
+        padding-left:1vw;
+      }
+      .but{
+        width:110%;
+      }
+    }
+
+    @media screen and (max-width:1600px){
+      .hasButton{
+        padding-left:2vw;
+      }
+      .but{
+        width:120%;
+      }
+    }
+
+    /*1200px is the breakpoint for navbar xl*/
+    @media screen and (max-width:1200px) {
+      .but {
+        border-radius: 0;
+        width:100%;
+      }
+    }
+  </style>
 </head>
 <body>
     <!--BUTTON-->
     <button onClick="secretCode()" style="display:none;"></button>
     <div data-include="translate"></div>
 
-    <div data-include="header"></div>
+    <nav class="navbar navbar-expand-xl fixed-top">
+
+      <div class="navbar-brand" style="padding-left:2vw;">
+        <a href="https://www.jumprobotics.org">
+          <img style="position:relative;bottom:3px;height:30px;height:60px;" src='https://www.jumprobotics.org/assets/images/logo.svg'>
+          </a>
+      </div>
+      <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.jumprobotics.org/about">About Us
+              <div style="width:6rem;" class="underline"></div>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.jumprobotics.org/people">People
+              <div class="underline"></div>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.jumprobotics.org/robots">Robots
+              <div class="underline"></div>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.jumprobotics.org/join">Join
+              <div style="width:3rem;" class="underline"></div>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.jumprobotics.org/join">Sponsors
+              <div style="width:6rem;" class="underline"></div>
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink">
+              More
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"
+              style="border:none;background-color:#ffffff">
+              <a class="dropdown-item" href="https://www.jumprobotics.org/media">Media</a>
+              <a class="dropdown-item" href="https://www.jumprobotics.org/machining">Machining</a>
+            </div>
+          </li>
+          <li class="nav-item hasButton">
+            <button class="nav-link but" onclick="load('https://www.jumprobotics.org/donate')">
+              Donate
+              <a style="display:none" href="https://www.jumprobotics.org/donate"></a>
+            </button>
+          </li>
+      </div>
+      </ul>
+      </div>
+    </nav>
+    
     <div class="container" style="height:70%;">
       <h1 style="position:relative;top:30%;text-align:center;font-size:4rem;">Help Support Us</h1>
     </div>
